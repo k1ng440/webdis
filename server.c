@@ -23,7 +23,7 @@
 static int
 socket_setup(struct server *s, const char *ip, short port) {
 
-	int reuse = 1;
+	int reuse = 1;\
 	struct sockaddr_in addr;
 	int fd, ret;
 
@@ -150,7 +150,7 @@ server_daemonize(const char *pidfile) {
 	if (pidfile) {
 		FILE *f = fopen(pidfile, "w");
 		if (f) {
-			fprintf(f, "%d\n", (int)getpid());
+			fprintf(f, "%d", (int)getpid());
 			fclose(f);
 		}
 	}
